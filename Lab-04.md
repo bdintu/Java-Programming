@@ -2,7 +2,7 @@
 
 ```
 import java.util.Date;
-public class main {   
+public class Main {   
 public static void main(String[] args) {
         Account obj = new Account(1122, 20000.0, 4.5);
         obj.withdraw(2500.0);
@@ -17,10 +17,8 @@ class Account {
     private int id;
     private double balance;
     private double annualInterestRate;
-    private Date dateCreated = new Date;
-
-
-    public void Account(int id1, double balance1, double annualInterestRate1){
+    private Date dateCreated = new Date();
+    Account(int id1, double balance1, double annualInterestRate1){
         id = id1;
         balance = balance1;
         annualInterestRate = annualInterestRate1;
@@ -29,7 +27,7 @@ class Account {
 
 
    
- public void withdraw(double gg) {
+     public void withdraw(double gg) {
         if( balance- gg >= 0){
             balance-=gg;
         }
