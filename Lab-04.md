@@ -2,14 +2,8 @@
 
 ```
 import java.util.Date;
-
-public class Account {
-    private int id;
-    private double balance;
-    private double annualInterestRate;
-    private Date dateCreated;
-
-    public static void main(String[] args) {
+public class main {   
+public static void main(String[] args) {
         Account obj = new Account(1122, 20000.0, 4.5);
         obj.withdraw(2500.0);
         obj.deposit(3000.0);
@@ -18,18 +12,24 @@ public class Account {
         System.out.println("the monthly interest is "+ obj.getMonthlyInterest() );
         System.out.println("the date when this account was created is "+ obj.getdateCreated() );
     }
+ }
+class Account {
+    private int id;
+    private double balance;
+    private double annualInterestRate;
+    private Date dateCreated = new Date;
 
-    public void Account(int id1, double balance1, double annualInterestRate1){
+
+    public void Account(int id1, double balance1, double annualInterestRate1){
         id = id1;
         balance = balance1;
         annualInterestRate = annualInterestRate1;
     }
 
-    public void dateCreated(){
-        dateCreated =  new Date;
-    }
-    
-    public void withdraw(double gg) {
+
+
+   
+ public void withdraw(double gg) {
         if( balance- gg >= 0){
             balance-=gg;
         }
