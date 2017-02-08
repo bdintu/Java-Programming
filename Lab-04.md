@@ -63,18 +63,17 @@ class Account {
     public Date getDateCreated() {
         return  dateCreated;
     }
-    
+
     public void printBalance() {
-    	System.out.println("The balance is " + balance );
+        System.out.println("The balance is " + balance );
     }
-    
-	public void printMenu() {
-		System.out.println("Main menu");
-		System.out.println("1: check balance");
-		System.out.println("2: withdraw");
-		System.out.println("3: deposit");
-		System.out.println("4: exit");
-		System.out.println("Enter a choice:");
+
+	public void printMonthlyInterest() {
+		System.out.println("the monthly interest is " + getMonthlyInterest() );
+	}
+	
+	public void printDateCreated() {
+		System.out.println("the date when this account was created is "+ getDateCreated() );
 	}
 }
 ```
@@ -170,11 +169,19 @@ class Account {
     public Date getDateCreated() {
         return  dateCreated;
     }
-    
+
     public void printBalance() {
-    	System.out.println("The balance is " + balance );
+        System.out.println("The balance is " + balance );
     }
-    
+
+	public void printMonthlyInterest() {
+		System.out.println("the monthly interest is " + getMonthlyInterest() );
+	}
+	
+	public void printDateCreated() {
+		System.out.println("the date when this account was created is "+ getDateCreated() );
+	}
+	
 	public void printMenu() {
 		System.out.println("Main menu");
 		System.out.println("1: check balance");
