@@ -1,5 +1,6 @@
 #Programming Exercise 3.5 p.131 
-```
+
+```java
 import java.util.Scanner;
 public class Main{
 	public static void main(String args[]){
@@ -16,53 +17,49 @@ public class Main{
 	}
 }
 ```
+
 #Programming Exercise 3.17 p.133
-```
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package lab2_1;
+
+```java
 import java.util.Scanner;
-/**
- *
- * @author ninek
- */
-public class Lab2_2 {
+
+public class Main {
+
     public static void main(String args[]){
-        String a[] = {"scissor", "rock", "paper"};
-    System.out.print("scissor (0), rock (1), paper (2):");
-    Scanner obj = new Scanner (System.in);
-    int me = obj.nextInt();
-    int random = (int )(Math.random()*3);
-     System.out.print("The computer is "+a[random]);
-     System.out.print(" You are "+a[me]+".");
-    if(me==random)
-        System.out.print("tooIt is a draw");
-    else if(me==0&&random==1){
-        System.out.print("You lose");}
-    else if(me==0&&random==2){
-        System.out.print("You win");}
-    else if(me==1&&random==0){
-        System.out.print("You win");}
-    else if(me==1&&random==2){
-        System.out.print("You lose");}
-    else if(me==2&&random==0){
-        System.out.print("You lose");}
-    else if(me==2&&random==1){
-        System.out.print("You win");}
-       
-    
-    
-    
-    
+
+		String a[] = {"scissor", "rock", "paper"};
+		int random = (int)(Math.random()*3);
+
+    	System.out.print("scissor (0), rock (1), paper (2):");
+    	
+    	Scanner sn = new Scanner (System.in);
+    	int me = sn.nextInt();
+    	
+		System.out.print("The computer is "+a[random]);
+		System.out.print(" You are "+a[me]+".");
+		
+    	if( me==random ) {
+			System.out.print("tooIt is a draw");
+    	} else if(me==0&&random==1){
+        	System.out.print("You lose");
+    	} else if(me==0&&random==2){
+        	System.out.print("You win");
+    	} else if(me==1&&random==0){
+        	System.out.print("You win");
+    	} else if(me==1&&random==2){
+        	System.out.print("You lose");
+    	} else if(me==2&&random==0){
+        	System.out.print("You lose");
+    	} else if(me==2&&random==1){
+        	System.out.print("You win");
+		}
     }
 }
+```
 
-```
 #Programming Exercise 4.24 p.178
-```
+
+```java
 import java.util.Scanner;
 public class Main{
 	public static void main(String args[]){
@@ -94,8 +91,10 @@ public class Main{
 	}
 }
 ```
+
 #Programming Exercise 5.17 p.215
-```
+
+```java
 import java.util.Scanner;
 public class Main{
 	public static void main(String args[]){
@@ -119,19 +118,20 @@ public class Main{
 	}
 }
 ```
+
 #Extra Exercise (Math Olympiad)
-```
+
+```java
 public class Main {
+
   public static void main(String[] args) {
 
     int a=1, b=3, n=0;
-    
     for(int i=0; i<100; i++){
         System.out.print(a+" "+b+" ");
         a+=n+=2;
         b+=3;
     }
-  
   }
 }
 ```
