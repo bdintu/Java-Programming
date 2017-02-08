@@ -11,10 +11,10 @@ public class Main {
         obj.setDefault( 1122, 20000.0, 4.5 );
         obj.withdraw(2500.0);
         obj.deposit(3000.0);
-
-        System.out.println("the balance is "+ obj.getBalance() );
-        System.out.println("the monthly interest is "+ obj.getMonthlyInterest() );
-        System.out.println("the date when this account was created is "+ obj.getDateCreated() );
+        
+        obj.printBalance();
+        obj.printMonthlyInterest();
+        obj.printDateCreated();
     }
 }
 
