@@ -63,82 +63,96 @@ class Account {
     public Date getDateCreated() {
         return  dateCreated;
     }
+    
+    public void printBalance() {
+    	System.out.println("The balance is " + balance );
+    }
+    
+	public void printMenu() {
+		System.out.println("Main menu");
+		System.out.println("1: check balance");
+		System.out.println("2: withdraw");
+		System.out.println("3: deposit");
+		System.out.println("4: exit");
+		System.out.println("Enter a choice:");
+	}
 }
 ```
 
 #Programming Exercise 10.7 p.401 (Game: ATM machine) 
 
 ``` java
-package main;
-import java.util.Date;
 import java.util.Scanner;
+import java.util.Date;
 
 public class Main {
+
     public static void main(String[] args) {
+    	
+    	Scanner sn = new Scanner(System.in);
+
         Account[] obj = new Account[10];
-        for(int i= 0; i<10 ;i++) {
+        for( int i= 0; i<10 ; i++ ) {
             obj[i] = new Account();
         }
-        Scanner sn = new Scanner(System.in);
 
-        int i = 0, j =0;
         while( true) {
+        	
             System.out.println("Enter an id:");
-            j = 0;
-            i = sn.nextInt();
-            
+
+            int i = sn.nextInt();
+            int j = 0;
+
             while( j!=4 ) {
                 
-                System.out.println("Main menu");
-                System.out.println("1: check balance");
-                System.out.println("2: withdraw");
-                System.out.println("3: deposit");
-                System.out.println("4: exit");
-                System.out.println("Enter a choice:");
-
+				obj[i].printMenu();
                 j = sn.nextInt();
 
                 if( j == 1 ){
-                       System.out.println("The balance is "+ obj[i].getBalance() );
+
+                       obj[i].printBalance();
                 } else if ( j == 2 ) {
+
                     System.out.println("Enter an amount to withdraw:");
                     obj[i].withdraw(  sn.nextInt()  );
+
                 } else if ( j== 3 ) {
                     System.out.println("Enter an amount to deposit:");
                     obj[i].deposit(  sn.nextInt()  );
                 }
             }
-        }   
-        
+        }
    }
 }
 
 class Account {
+
     private int id;
     private double balance;
     private double annualInterestRate;
     private Date dateCreated = new Date();
 
-    Account(){
+    public void Account(){
         id = 0;
-        balance = 100;
+        balance = 0;
         annualInterestRate = 0;
     }
 
-    public setDefult( int id1, double balance1, double annualInterestRate1){
-        id = id1;
-        balance = balance1;
-        annualInterestRate = annualInterestRate1;
+    public void setDefault( int initID, double initBalance, double initAnnualInterestRate ){
+        id = initID;
+        balance = initBalance;
+        annualInterestRate = initAnnualInterestRate;
     }
 
-    public void withdraw(double gg) {
-        if( balance- gg >= 0){
-            balance-=gg;
+    public void withdraw(double money) {
+
+        if( balance - money >= 0){
+            balance -=money;
         }
     }
 
-    public void deposit(double gg) {
-        balance += gg;
+    public void deposit(double money) {
+        balance += money;
     }
 
     public double getBalance() {
@@ -153,8 +167,21 @@ class Account {
         return  annualInterestRate / 12;
     }
 
-    public Date getdateCreated() {
+    public Date getDateCreated() {
         return  dateCreated;
     }
+    
+    public void printBalance() {
+    	System.out.println("The balance is " + balance );
+    }
+    
+	public void printMenu() {
+		System.out.println("Main menu");
+		System.out.println("1: check balance");
+		System.out.println("2: withdraw");
+		System.out.println("3: deposit");
+		System.out.println("4: exit");
+		System.out.println("Enter a choice:");
+	}
 }
 ```
