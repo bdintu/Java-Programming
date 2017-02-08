@@ -1,6 +1,6 @@
 #Programming Exercise 9.7 p.361 (The Account class)
 
-```
+```java
 import java.util.Date;
 
 public class Main {
@@ -64,7 +64,7 @@ class Account {
 
 #Programming Exercise 10.7 p.401 (Game: ATM machine) 
 
-```
+``` java
 package main;
 import java.util.Date;
 import java.util.Scanner;
