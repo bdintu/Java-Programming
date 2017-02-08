@@ -1,9 +1,7 @@
 #Programming Exercise 9.7 p.361 (The Account class)
 
 ```
-package javaapplication1;
 import java.util.Date;
-
 
 public class Account {
     private int id;
@@ -18,7 +16,7 @@ public class Account {
     
         System.out.println("the balance is "+ obj.getBalance() );
         System.out.println("the monthly interest is "+ obj.getMonthlyInterest() );
-        System.out.println("the date when this account was created is "+ obj.getBalance() );
+        System.out.println("the date when this account was created is "+ obj.dateCreated() );
     }
     
     public Account(int id1, double balance1, double annualInterestRate1){
@@ -27,9 +25,9 @@ public class Account {
         annualInterestRate = annualInterestRate1;
     }
     
-    /*public void dateCreated(){
-        dateCreated = new Date;
-    }*/
+    public void dateCreated(){
+        return new Date;
+    }
     
     public double getBalance() {
         return balance;
