@@ -1,4 +1,5 @@
-Programming Exercise 6.26 p.262 (Palindromic prime)
+#Programming Exercise 6.26 p.262 (Palindromic prime)
+
 ```
 class Main
 {
@@ -71,7 +72,9 @@ class Main
     }
 }
 ```
-Programming Exercise 7.31 p.283 (Merge two sorted lists) 
+
+#Programming Exercise 7.31 p.283 (Merge two sorted lists) 
+
 ```
 import java.util.Scanner;
 
@@ -143,7 +146,9 @@ class Main
     }
 }
 ```
-Programming Exercise 8.14 p.310 (Explore matrix) 
+
+#Programming Exercise 8.14 p.310 (Explore matrix)
+
 ```
 import java.util.Scanner;
 
