@@ -1,6 +1,6 @@
 #Programming Exercise 6.26 p.262 (Palindromic prime)
 
-```
+```java
 class Main
 {
     public static void main (String[] args)
@@ -75,7 +75,7 @@ class Main
 
 #Programming Exercise 7.31 p.283 (Merge two sorted lists) 
 
-```
+```java
 import java.util.Scanner;
 
 class Main
@@ -149,7 +149,7 @@ class Main
 
 #Programming Exercise 8.14 p.310 (Explore matrix)
 
-```
+```java
 import java.util.Scanner;
 
 class Main {
