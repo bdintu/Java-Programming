@@ -140,12 +140,6 @@ class Account {
         this.annualInterestRate = annualInterestRate;
     }
 
-    public void setDefault( int initID, double initBalance, double initAnnualInterestRate ){
-        id = initID;
-        balance = initBalance;
-        annualInterestRate = initAnnualInterestRate;
-    }
-
     public void withdraw(double money) {
 
         if( balance - money >= 0){
