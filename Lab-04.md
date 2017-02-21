@@ -10,10 +10,7 @@ public class Main {
         Account account = new Account( 1122, 20000.0, 4.5 );
         account.withdraw(2500.0);
         account.deposit(3000.0);
-
-        account.printBalance();
-        account.printMonthlyInterest();
-        account.printDateCreated();
+        System.out.println(account.toString());
     }
 }
 
@@ -25,27 +22,28 @@ class Account {
     private Date dateCreated;
 
     public Account(){
-        id = 0;
-        balance = 0;
-        annualInterestRate = 0;
-	dateCreated = new Date(); 
+		this(0, 0.0, 0.0);
     }
 
     public Account( int id, double balance, double annualInterestRate ){
         this.id = id;
         this.balance = balance;
         this.annualInterestRate = annualInterestRate;
+        dateCreated = new Date(); 
     }
 
-    public void withdraw(double money) {
+    public void withdraw(double amount) {
 
-        if( balance - money >= 0){
-            balance -=money;
+        if( amount  <= balance){
+            balance -= amount;
         }
     }
 
-    public void deposit(double money) {
-        balance += money;
+    public void deposit(double amount) {
+
+        if( amount>=0 ){
+            balance += amount;
+        }
     }
 
     public double getBalance() {
@@ -63,17 +61,9 @@ class Account {
     public Date getDateCreated() {
         return  dateCreated;
     }
-
-    public void printBalance() {
-        System.out.println("The balance is " + balance );
-    }
-
-    public void printMonthlyInterest() {
-        System.out.println("the monthly interest is " + getMonthlyInterest() );
-    }
-
-    public void printDateCreated() {
-        System.out.println("the date when this account was created is "+ getDateCreated() );
+    
+    public String toString(){
+    	return "The balance is $" + balance + "\nthe monthly interest is " + getMonthlyInterest() + "%\nThe date when this account was created is "+ dateCreated +"\n";
     }
 }
 ```
@@ -92,12 +82,12 @@ public class Main {
     	
     	final int size = 10;
 
-        Account[] obj = new Account[size];
+        Account[] account = new Account[size];
         for( int i= 0; i<size ; i++ ) {
-            obj[i] = new Account();
+            account[i] = new Account();
         }
 
-        while( true) {
+        while(true) {
         	
             System.out.println("Enter an id:");
 
@@ -106,21 +96,21 @@ public class Main {
 
             while( j!=4 ) {
                 
-				obj[i].printMenu();
+				account[i].printMenu();
                 j = sn.nextInt();
 
                 if( j == 1 ){
                 	
-					obj[i].printBalance();
+					account[i].printBalance();
                 } else if ( j == 2 ) {
 
                     System.out.println("Enter an amount to withdraw:");
-                    obj[i].withdraw(  sn.nextInt()  );
+                    account[i].withdraw(  sn.nextInt()  );
 
                 } else if ( j== 3 ) {
 
                     System.out.println("Enter an amount to deposit:");
-                    obj[i].deposit(  sn.nextInt()  );
+                    account[i].deposit(  sn.nextInt()  );
                 }
             }
         }
@@ -135,27 +125,28 @@ class Account {
     private Date dateCreated;
 
     public Account(){
-        id = 0;
-        balance = 0;
-        annualInterestRate = 0;
-	dateCreated = new Date(); 
+		this(0, 0.0, 0.0);
     }
     
     public Account( int id, double balance, double annualInterestRate ){
         this.id = id;
         this.balance = balance;
         this.annualInterestRate = annualInterestRate;
+        dateCreated = new Date(); 
     }
 
-    public void withdraw(double money) {
+    public void withdraw(double amount) {
 
-        if( balance - money >= 0){
-            balance -=money;
+        if( amount  <= balance){
+            balance -= amount;
         }
     }
 
-    public void deposit(double money) {
-        balance += money;
+    public void deposit(double amount) {
+
+        if( amount>=0 ){
+            balance += amount;
+        }
     }
 
     public double getBalance() {
@@ -186,7 +177,7 @@ class Account {
 		System.out.println("the date when this account was created is "+ getDateCreated() );
 	}
 	
-	public void printMenu() {
+	public static void printMenu() {
 		System.out.println("Main menu");
 		System.out.println("1: check balance");
 		System.out.println("2: withdraw");
