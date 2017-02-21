@@ -7,14 +7,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Account obj = new Account();
-        obj.setDefault( 1122, 20000.0, 4.5 );
-        obj.withdraw(2500.0);
-        obj.deposit(3000.0);
-
-        obj.printBalance();
-        obj.printMonthlyInterest();
-        obj.printDateCreated();
+        Account account = new Account( 1122, 20000.0, 4.5 );
+        account.withdraw(2500.0);
+        account.deposit(3000.0);
+        System.out.println(account.toString());
+        
+        /*SavingsAccount saving = new SavingsAccount( 1122, 20000.0, 4.5 );
+        System.out.println(saving.toString());
+        
+        CheckingAccount saving = new CheckingAccount( 1122, 20000.0, 4.5 );
+        System.out.println(saving.toString());*/
     }
 }
 
@@ -25,13 +27,13 @@ class Account {
     private double annualInterestRate;
     private Date dateCreated = new Date();
 
-    public void Account(){
+    public Account(){
         id = 0;
         balance = 0;
         annualInterestRate = 0;
     }
 
-    public void setDefault( int initID, double initBalance, double initAnnualInterestRate ){
+    public Account( int initID, double initBalance, double initAnnualInterestRate ){
         id = initID;
         balance = initBalance;
         annualInterestRate = initAnnualInterestRate;
@@ -63,17 +65,9 @@ class Account {
     public Date getDateCreated() {
         return  dateCreated;
     }
-
-    public void printBalance() {
-        System.out.println("The balance is " + balance );
-    }
-
-    public void printMonthlyInterest() {
-        System.out.println("the monthly interest is " + getMonthlyInterest() );
-    }
-
-    public void printDateCreated() {
-        System.out.println("the date when this account was created is "+ getDateCreated() );
+    
+    public String toString(){
+    	return "The balance is " + getBalance() + "\n" + "the monthly interest is " + getMonthlyInterest() + "\n" + "the date when this account was created is "+ getDateCreated() + "\n";
     }
 }
 
@@ -96,14 +90,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Account obj = new Account();
-        obj.setDefault( 1122, 20000.0, 4.5 );
-        obj.withdraw(2500.0);
-        obj.deposit(3000.0);
-
-        obj.printBalance();
-        obj.printMonthlyInterest();
-        obj.printDateCreated();
+        Account account = new Account( 1122, 20000.0, 4.5 );
+        account.withdraw(2500.0);
+        account.deposit(3000.0);
+        System.out.println(account.toString());
     }
 }
 
@@ -115,15 +105,14 @@ class Account {
     private double annualInterestRate;
     ArrayList transactions = new ArrayList();
     private Date dateCreated = new Date();
-
-    public void Account(){
+    
+    public Account(){
         id = 0;
-        name = "";
         balance = 0;
         annualInterestRate = 0;
     }
 
-    public void setDefault( int initID, double initBalance, double initAnnualInterestRate ){
+    public Account( int initID, double initBalance, double initAnnualInterestRate ){
         id = initID;
         balance = initBalance;
         annualInterestRate = initAnnualInterestRate;
@@ -156,16 +145,8 @@ class Account {
         return  dateCreated;
     }
 
-    public void printBalance() {
-        System.out.println("The balance is " + balance );
-    }
-
-    public void printMonthlyInterest() {
-        System.out.println("the monthly interest is " + getMonthlyInterest() );
-    }
-
-    public void printDateCreated() {
-        System.out.println("the date when this account was created is "+ getDateCreated() );
+    public String toString(){
+    	return "The balance is " + getBalance() + "\n" + "the monthly interest is " + getMonthlyInterest() + "\n" + "the date when this account was created is "+ getDateCreated() + "\n";
     }
 }
 
