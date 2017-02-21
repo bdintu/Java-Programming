@@ -214,7 +214,7 @@ class Account {
     }
 
     public String toString(){
-        return "Accountholder name," + name + "\n" + "the monthly interest is " + getMonthlyInterest() + "%\n" + "The balance is $" + balance + "\n" + "the date when this account was created is "+ dateCreated + "\n";
+        return "Accountholder name is " + name + "\n" + "the monthly interest is " + getMonthlyInterest() + "%\n" + "The balance is $" + balance + "\n" + "the date when this account was created is "+ dateCreated + "\n";
     }
 }
 
