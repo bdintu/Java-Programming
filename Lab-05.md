@@ -72,18 +72,18 @@ class Account {
 }
 
 class SavingsAccount extends Account {
-	
-	public SavingsAccount(int initID, double initBalance, double initAnnualInterestRate) {
-		super( initID, initBalance, initAnnualInterestRate);
-	}
+
+    public SavingsAccount(int id, double balance, double annualInterestRate) {
+        super( id, balance, annualInterestRate);
+    }
 
 }
 
 class CheckingAccount extends Account {
-	
-	public CheckingAccount(int initID, double initBalance, double initAnnualInterestRate) {
-		super( initID, initBalance, initAnnualInterestRate);
-	}
+
+    public CheckingAccount(int id, double balance, double annualInterestRate) {
+        super( id, balance, annualInterestRate);
+    }
 
 }
 ```
