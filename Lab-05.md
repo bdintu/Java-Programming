@@ -12,11 +12,15 @@ public class Main {
         account.deposit(3000.0);
         System.out.println(account.toString());
 
-        SavingsAccount saving = new SavingsAccount( 1122, 20000.0, 4.5 );
+        SavingsAccount saving = new SavingsAccount( 1123, 20000.0, 4.5 );
+        saving.withdraw(2500.0);
+        saving.deposit(3000.0);
         System.out.println(saving.toString());
 
-        CheckingAccount checking = new CheckingAccount( 1122, 20000.0, 4.5 );
-        System.out.println(saving.toString());
+        CheckingAccount checking = new CheckingAccount( 1124, 20000.0, 4.5, -10);
+        checking.withdraw(2500.0);
+        checking.deposit(3000.0);
+        System.out.println(checking.toString());
     }
 }
 
@@ -28,31 +32,36 @@ class Account {
     private Date dateCreated;
 
     public Account(){
-        id = 0;
-        balance = 0;
-        annualInterestRate = 0;
-	dateCreated = new Date(); 
+    	this(0, 0.0, 0.0);
     }
 
     public Account( int id, double balance, double annualInterestRate ){
         this.id = id;
         this.balance = balance;
         this.annualInterestRate = annualInterestRate;
+        dateCreated = new Date();
     }
 
-    public void withdraw(double money) {
+    public void withdraw(double amount) {
 
-        if( balance - money >= 0){
-            balance -=money;
+        if( amount  <= balance){
+            balance -= amount;
         }
     }
 
-    public void deposit(double money) {
-        balance += money;
+    public void deposit(double amount) {
+    	
+    	if( amount>=0 ){
+    		balance += amount;
+    	}
     }
 
     public double getBalance() {
         return balance;
+    }
+    
+    public void setBalance(double balance){
+    	this.balance = balance;
     }
 
     public double getMonthlyInterestRate(){
@@ -73,19 +82,54 @@ class Account {
 }
 
 class SavingsAccount extends Account {
+	
+	public SavingsAccount() {
+		super();
+	}
 
     public SavingsAccount(int id, double balance, double annualInterestRate) {
         super( id, balance, annualInterestRate);
     }
-
+    
+	public void withdraw(double amount) {
+		
+		if (amount <= getBalance()) {
+			setBalance( getBalance() - amount);
+		} else {
+			System.out.println("Savings Account overdrawn");
+		}
+	}
 }
 
 class CheckingAccount extends Account {
+	
+	private double overdraft;
+	
+	public CheckingAccount() {
+		super();
+		overdraft = -10;
+	}
 
-    public CheckingAccount(int id, double balance, double annualInterestRate) {
+    public CheckingAccount(int id, double balance, double annualInterestRate, double overdraft) {
         super( id, balance, annualInterestRate);
+        this.overdraft = overdraft;
     }
+    
+	public double getOverdraft() {
+		return overdraft;
+	}
 
+	public void withdraw(double amount) {
+		if (getBalance() - amount > overdraft) {
+			setBalance(getBalance() - amount);
+		}
+		else
+			System.out.println("Checking Amount overdraft limit");
+	}
+
+	public String toString() {
+		return super.toString() + "Overdraft limit " + overdraft + "\n";
+	}
 }
 ```
 
