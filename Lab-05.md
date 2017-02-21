@@ -79,7 +79,7 @@ class Account {
     }
 
     public String toString(){
-        return "The balance is $" + balance + "\n" + "the monthly interest is " + getMonthlyInterest() + "%\n" + "the date when this account was created is "+ dateCreated + "\n";
+        return "The balance is $" + balance + "\nthe monthly interest is " + getMonthlyInterest() + "%\nthe date when this account was created is "+ dateCreated + "\n";
     }
 }
 
@@ -216,7 +216,7 @@ class Account {
     }
 
     public String toString(){
-        return "Accountholder name is " + name + "\n" + "the monthly interest is " + getMonthlyInterest() + "%\n" + "The balance is $" + balance + "\n" + "the date when this account was created is "+ dateCreated + "\n";
+        return "Accountholder name is " + name + "\nthe monthly interest is " + getMonthlyInterest() + "%\nThe balance is $" + balance + "\nthe date when this account was created is "+ dateCreated + "\n";
     }
 }
 
@@ -291,4 +291,68 @@ class Transaction {
 Programming Exercise 11.2 p.445
 
 ```java
+public class Main {
+
+    public static void main(String[] args) {
+
+		Person person = new Person("A", "Bangkok", "0998887776", "59019999@kmitl.ac.th");
+		Student student = new Student("B", "Chiang Mai", "0998886274", "59018888@kmitl.ac.th", "freshman");
+		/*Employee employee = new Employee("C", "Phuket", "0998880341","59017777@kmitl.ac.th");
+		Faculty faculty = new Faculty("D", "Korat", "0998889402","59016666@kmitl.ac.th");
+		Staff staff = new Staff("E", "Ubon", "0998880341","59015555@kmitl.ac.th");*/
+
+		System.out.println(person.toString());
+		System.out.println(student.toString());
+		/*System.out.println(employee.toString());
+		System.out.println(faculty.toString());
+		System.out.println(staff.toString());*/
+    }
+}
+
+class Person {
+	private String name;
+	private String address;
+	private String phone;
+	private String email;
+	
+	public Person() {
+		this("","","","");
+	}
+
+	public Person(String name, String address, String phone, String email) {
+		this.name = name;
+		this.address = address;
+		this.phone = phone;
+		this.email = email;
+	}
+	
+	public String toString() {
+		return "Name " + name + "\nAddress " + address + "\nPhone number " + phone + "\nEmail address " + email + "\n";
+	}
+}
+
+class Student extends Person {
+	private String status;
+	
+	public Student(String name, String address, String phone, String email, String status){
+		super(name, address, phone, email);
+		this.status = status;
+	}
+	
+	public String toString() {
+		return super.toString() + "Status " + status + "\n";
+	}
+}
+
+class Employee extends Person {
+	
+}
+
+class Faculty extends Employee {
+	
+}
+
+class Staff extends Employee {
+	
+}
 ```
