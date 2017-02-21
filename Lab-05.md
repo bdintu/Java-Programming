@@ -77,7 +77,7 @@ class Account {
     }
 
     public String toString(){
-        return "The balance is " + getBalance() + "\n" + "the monthly interest is " + getMonthlyInterest() + "\n" + "the date when this account was created is "+ getDateCreated() + "\n";
+        return "The balance is $" + balance + "\n" + "the monthly interest is " + getMonthlyInterest() + "%\n" + "the date when this account was created is "+ dateCreated + "\n";
     }
 }
 
@@ -114,13 +114,9 @@ class CheckingAccount extends Account {
         super( id, balance, annualInterestRate);
         this.overdraft = overdraft;
     }
-    
-	public double getOverdraft() {
-		return overdraft;
-	}
 
 	public void withdraw(double amount) {
-		if (getBalance() - amount > overdraft) {
+		if (getBalance() - amount >= overdraft) {
 			setBalance(getBalance() - amount);
 		}
 		else
@@ -128,7 +124,7 @@ class CheckingAccount extends Account {
 	}
 
 	public String toString() {
-		return super.toString() + "Overdraft limit " + overdraft + "\n";
+		return super.toString() + "Overdraft limit $" + overdraft + "\n";
 	}
 }
 ```
@@ -179,15 +175,18 @@ class Account {
         this.name = name;
     }
 
-    public void withdraw(double money) {
+    public void withdraw(double amount) {
 
-        if( balance - money >= 0){
-            balance -=money;
+        if( balance - amount >= 0){
+            balance -= amount;
         }
     }
 
-    public void deposit(double money) {
-        balance += money;
+    public void deposit(double amount) {
+    	
+    	if(amount >= 0){
+    		balance += amount;
+    	}
     }
 
     public double getBalance() {
@@ -207,7 +206,7 @@ class Account {
     }
 
     public String toString(){
-    	return "The balance is " + getBalance() + "\n" + "the monthly interest is " + getMonthlyInterest() + "\n" + "the date when this account was created is "+ getDateCreated() + "\n";
+    	return "The balance is " + balance + "\n" + "the monthly interest is " + getMonthlyInterest() + "\n" + "the date when this account was created is "+ dateCreated + "\n";
     }
 }
 
@@ -227,15 +226,18 @@ class Transaction {
 		dateCreated = new Date(); 
 	}
 
-    public void withdraw(double money) {
+    public void withdraw(double amount) {
 
-        if( balance - money >= 0){
-            balance -=money;
+        if( balance - amount >= 0){
+            balance -= amount;
         }
     }
 
-    public void deposit(double money) {
-        balance += money;
+    public void deposit(double amount) {
+    	
+    	if(amount >= 0){
+    		balance += amount;
+    	}
     }
 	
 	public char getType() {
