@@ -107,7 +107,7 @@ class CheckingAccount extends Account {
 	
 	public CheckingAccount() {
 		super();
-		overdraft = -10;
+		overdraft = 0;
 	}
 
     public CheckingAccount(int id, double balance, double annualInterestRate, double overdraft) {
