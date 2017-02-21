@@ -183,6 +183,17 @@ class Transaction {
 		this.balance = balance;
 		this.description = description;
 	}
+
+    public void withdraw(double money) {
+
+        if( balance - money >= 0){
+            balance -=money;
+        }
+    }
+
+    public void deposit(double money) {
+        balance += money;
+    }
 	
 	public char getType() {
         return type;
