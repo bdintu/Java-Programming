@@ -146,7 +146,12 @@ public class Main {
         account.withdraw(5.0);
         account.withdraw(4.0);
         account.withdraw(2.0);
+        
         System.out.println(account.toString());
+        for(int i=0; i<account.getTransactions().size(); i++){
+        	System.out.print("id " + i + " : ");
+        	System.out.println( account.getTransactions().get(i).toString() );
+        }
     }
 }
 
@@ -158,14 +163,9 @@ class Account {
     private String name;
     private ArrayList<Transaction> transactions;
     private Date dateCreated;
-    
+
     public Account(){
-        id = 0;
-        balance = 0;
-        annualInterestRate = 0;
-        name = "";
-        transactions = new ArrayList<Transaction>();
-        dateCreated = new Date(); 
+        this(0, 0.0, 0.0, "");
     }
 
     public Account( int id, double balance, double annualInterestRate, String name ){
@@ -173,21 +173,29 @@ class Account {
         this.balance = balance;
         this.annualInterestRate = annualInterestRate;
         this.name = name;
+        transactions = new ArrayList<Transaction>();
+        dateCreated = new Date(); 
     }
 
     public void withdraw(double amount) {
 
         if( balance - amount >= 0){
             balance -= amount;
+            transactions.add(new Transaction('W', amount, balance, "Withdrawal"));
         }
     }
 
     public void deposit(double amount) {
-    	
-    	if(amount >= 0){
-    		balance += amount;
-    	}
+
+        if(amount >= 0){
+            balance += amount;
+            transactions.add(new Transaction('D', amount, balance, "Deposit"));
+        }
     }
+    
+	public ArrayList<Transaction> getTransactions() {
+		return transactions;
+	}
 
     public double getBalance() {
         return balance;
@@ -206,25 +214,25 @@ class Account {
     }
 
     public String toString(){
-    	return "The balance is " + balance + "\n" + "the monthly interest is " + getMonthlyInterest() + "\n" + "the date when this account was created is "+ dateCreated + "\n";
+        return "Accountholder name," + name + "\n" + "the monthly interest is " + getMonthlyInterest() + "%\n" + "The balance is $" + balance + "\n" + "the date when this account was created is "+ dateCreated + "\n";
     }
 }
 
 class Transaction {
-	
-	private char type;
-	private double amount;
-	private double balance;
-	private String description;
-	private Date dateCreated;
-	
-	public Transaction(char type, double amount, double balance, String description){
-		this.type = type;
-		this.amount = amount;
-		this.balance = balance;
-		this.description = description;
-		dateCreated = new Date(); 
-	}
+
+    private char type;
+    private double amount;
+    private double balance;
+    private String description;
+    private Date dateCreated;
+
+    public Transaction(char type, double amount, double balance, String description){
+        this.type = type;
+        this.amount = amount;
+        this.balance = balance;
+        this.description = description;
+        dateCreated = new Date(); 
+    }
 
     public void withdraw(double amount) {
 
@@ -234,42 +242,46 @@ class Transaction {
     }
 
     public void deposit(double amount) {
-    	
-    	if(amount >= 0){
-    		balance += amount;
-    	}
+
+        if(amount >= 0){
+            balance += amount;
+        }
     }
-	
-	public char getType() {
+
+    public char getType() {
         return type;
     }
-    
-	public void setType(char type) {
+
+    public void setType(char type) {
         this.type = type;
     }
-    
-	public double getAmount() {
+
+    public double getAmount() {
         return amount;
     }
-    
-	public void setAmount(double amount) {
+
+    public void setAmount(double amount) {
         this.amount = amount;
     }
-    
-	public double getBalance() {
+
+    public double getBalance() {
         return balance;
     }
-    
-	public void setBalance(double balance) {
+
+    public void setBalance(double balance) {
         this.balance = balance;
     }
-    
-	public String getDescription() {
+
+    public String getDescription() {
         return description;
     }
-    
-	public void setDescription(String description) {
+
+    public void setDescription(String description) {
         this.description = description;
+    }
+    
+    public String toString(){
+        return "Date" + dateCreated + ", Type "+ type + ", Amount " + amount + ", Balance " + balance + ", Description " + description +"\n";
     }
 }
 ```
