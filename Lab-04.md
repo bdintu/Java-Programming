@@ -7,13 +7,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Account obj = new Account( 1122, 20000.0, 4.5 );
-        obj.withdraw(2500.0);
-        obj.deposit(3000.0);
+        Account account = new Account( 1122, 20000.0, 4.5 );
+        account.withdraw(2500.0);
+        account.deposit(3000.0);
         
-        obj.printBalance();
-        obj.printMonthlyInterest();
-        obj.printDateCreated();
+        SavingsAccount saving = new SavingsAccount( 1122, 20000.0, 4.5 );
+        CheckingAccount checking = new CheckingAccount( 1122, 20000.0, 4.5 );
     }
 }
 
@@ -29,7 +28,7 @@ class Account {
         balance = 0;
         annualInterestRate = 0;
     }
-    
+
     public Account( int initID, double initBalance, double initAnnualInterestRate ){
         id = initID;
         balance = initBalance;
@@ -62,18 +61,14 @@ class Account {
     public Date getDateCreated() {
         return  dateCreated;
     }
+}
 
-    public void printBalance() {
-        System.out.println("The balance is " + balance );
-    }
+class SavingsAccount extends Account {
 
-	public void printMonthlyInterest() {
-		System.out.println("the monthly interest is " + getMonthlyInterest() );
-	}
-	
-	public void printDateCreated() {
-		System.out.println("the date when this account was created is "+ getDateCreated() );
-	}
+}
+
+class CheckingAccount extends Account {
+
 }
 ```
 
