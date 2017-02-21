@@ -291,68 +291,111 @@ class Transaction {
 Programming Exercise 11.2 p.445
 
 ```java
+import java.util.Date;
+
 public class Main {
 
     public static void main(String[] args) {
 
-		Person person = new Person("A", "Bangkok", "0998887776", "59019999@kmitl.ac.th");
-		Student student = new Student("B", "Chiang Mai", "0998886274", "59018888@kmitl.ac.th", "freshman");
-		/*Employee employee = new Employee("C", "Phuket", "0998880341","59017777@kmitl.ac.th");
-		Faculty faculty = new Faculty("D", "Korat", "0998889402","59016666@kmitl.ac.th");
-		Staff staff = new Staff("E", "Ubon", "0998880341","59015555@kmitl.ac.th");*/
+        Person person = new Person("A", "Bangkok", "0998887776", "59019999@kmitl.ac.th");
+        Student student = new Student("B", "Chiang Mai", "0998886274", "59018888@kmitl.ac.th", "freshman");
+        Employee employee = new Employee("C", "Phuket", "0998880341","59017777@kmitl.ac.th", "Network Lab", 12000.0);
+        Faculty faculty = new Faculty("D", "Korat", "0998889402","59016666@kmitl.ac.th", "KMITL Computer Faculty", 25000.0, "10.00-16.00", "Trainee");
+        Staff staff = new Staff("E", "Ubon", "0998880341","59015555@kmitl.ac.th", "KMITL Computer Faculty", 18000.0, "Title");
 
-		System.out.println(person.toString());
-		System.out.println(student.toString());
-		/*System.out.println(employee.toString());
-		System.out.println(faculty.toString());
-		System.out.println(staff.toString());*/
+        System.out.println(person.toString());
+        System.out.println(student.toString());
+        System.out.println(employee.toString());
+        System.out.println(faculty.toString());
+        System.out.println(staff.toString());
     }
 }
 
 class Person {
-	private String name;
-	private String address;
-	private String phone;
-	private String email;
 	
-	public Person() {
-		this("","","","");
-	}
+    private String name;
+    private String address;
+    private String phone;
+    private String email;
 
-	public Person(String name, String address, String phone, String email) {
-		this.name = name;
-		this.address = address;
-		this.phone = phone;
-		this.email = email;
-	}
-	
-	public String toString() {
-		return "Name " + name + "\nAddress " + address + "\nPhone number " + phone + "\nEmail address " + email + "\n";
-	}
+    public Person() {
+        this("","","","");
+    }
+
+    public Person(String name, String address, String phone, String email) {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+    }
+
+    public String toString() {
+        return "Name " + name + "\nAddress " + address + "\nPhone number " + phone + "\nEmail address " + email + "\n";
+    }
 }
 
 class Student extends Person {
-	private String status;
 	
-	public Student(String name, String address, String phone, String email, String status){
-		super(name, address, phone, email);
-		this.status = status;
-	}
-	
-	public String toString() {
-		return super.toString() + "Status " + status + "\n";
-	}
+    private String status;
+
+    public Student(String name, String address, String phone, String email, String status){
+        super(name, address, phone, email);
+        this.status = status;
+    }
+
+    public String toString() {
+        return super.toString() + "Status " + status + "\n";
+    }
 }
 
 class Employee extends Person {
 	
+	private String office;
+	private double salary;
+	private Date dateHired;
+	
+	public Employee(String name, String address, String phone, String email, String office, double salary){
+		super(name, address, phone, email);
+		this.office = office;
+		this.salary = salary;
+		this.dateHired = new Date();
+	}
+	
+	public String toString(){
+		return super.toString() + "Office " + office + "\nSalary $" + salary + "\nDate Hired " + dateHired + "\n";
+	}
+
 }
 
 class Faculty extends Employee {
 	
+	private String officeHours;
+	private String rank;
+	
+	public Faculty(String name, String address, String phone, String email, String office, double salary, String officeHours, String rank) {
+		super(name, address, phone, email, office, salary);
+		this.officeHours = officeHours;
+		this.rank = rank;
+	}
+	
+	public String toString(){
+		return super.toString() + "Office Hours " + officeHours + "\nRank " + rank + "\n";
+	}
+
 }
 
 class Staff extends Employee {
 	
+	private String title;
+	
+	public Staff(String name, String address, String phone, String email, String office, double salary, String title) {
+		super(name, address, phone, email, office, salary);
+		this.title = title;
+	}
+	
+	public String toString() {
+		return super.toString() + "Title " + title +  "\n";
+	}
+
 }
 ```
