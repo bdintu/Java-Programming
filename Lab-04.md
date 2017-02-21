@@ -7,8 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Account obj = new Account();
-        obj.setDefault( 1122, 20000.0, 4.5 );
+        Account obj = new Account( 1122, 20000.0, 4.5 );
         obj.withdraw(2500.0);
         obj.deposit(3000.0);
         
@@ -25,13 +24,13 @@ class Account {
     private double annualInterestRate;
     private Date dateCreated = new Date();
 
-    public void Account(){
+    public Account(){
         id = 0;
         balance = 0;
         annualInterestRate = 0;
     }
-
-    public void setDefault( int initID, double initBalance, double initAnnualInterestRate ){
+    
+    public Account( int initID, double initBalance, double initAnnualInterestRate ){
         id = initID;
         balance = initBalance;
         annualInterestRate = initAnnualInterestRate;
@@ -89,9 +88,11 @@ public class Main {
     public static void main(String[] args) {
     	
     	Scanner sn = new Scanner(System.in);
+    	
+    	final int size = 10;
 
-        Account[] obj = new Account[10];
-        for( int i= 0; i<10 ; i++ ) {
+        Account[] obj = new Account[size];
+        for( int i= 0; i<size ; i++ ) {
             obj[i] = new Account();
         }
 
@@ -108,14 +109,15 @@ public class Main {
                 j = sn.nextInt();
 
                 if( j == 1 ){
-
-                       obj[i].printBalance();
+                	
+					obj[i].printBalance();
                 } else if ( j == 2 ) {
 
                     System.out.println("Enter an amount to withdraw:");
                     obj[i].withdraw(  sn.nextInt()  );
 
                 } else if ( j== 3 ) {
+
                     System.out.println("Enter an amount to deposit:");
                     obj[i].deposit(  sn.nextInt()  );
                 }
@@ -131,10 +133,16 @@ class Account {
     private double annualInterestRate;
     private Date dateCreated = new Date();
 
-    public void Account(){
+    public Account(){
         id = 0;
         balance = 0;
         annualInterestRate = 0;
+    }
+    
+    public Account( int initID, double initBalance, double initAnnualInterestRate ){
+        id = initID;
+        balance = initBalance;
+        annualInterestRate = initAnnualInterestRate;
     }
 
     public void setDefault( int initID, double initBalance, double initAnnualInterestRate ){
