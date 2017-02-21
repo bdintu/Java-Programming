@@ -25,12 +25,13 @@ class Account {
     private int id;
     private double balance;
     private double annualInterestRate;
-    private Date dateCreated = new Date();
+    private Date dateCreated;
 
     public Account(){
         id = 0;
         balance = 0;
         annualInterestRate = 0;
+	dateCreated = new Date(); 
     }
 
     public Account( int id, double balance, double annualInterestRate ){
@@ -98,9 +99,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Account account = new Account( 1122, 20000.0, 4.5 );
-        account.withdraw(2500.0);
-        account.deposit(3000.0);
+        Account account = new Account( 1122, 1000.0, 1.5, "George" );
+        account.deposit(30.0);
+        account.deposit(40.0);
+        account.deposit(50.0);
+        account.withdraw(5.0);
+        account.withdraw(4.0);
+        account.withdraw(2.0);
         System.out.println(account.toString());
     }
 }
@@ -108,22 +113,26 @@ public class Main {
 class Account {
 
     private int id;
-    private String name;
     private double balance;
     private double annualInterestRate;
-    ArrayList transactions = new ArrayList();
-    private Date dateCreated = new Date();
+    private String name;
+    private ArrayList<Transaction> transactions;
+    private Date dateCreated;
     
     public Account(){
         id = 0;
         balance = 0;
         annualInterestRate = 0;
+        name = "";
+        transactions = new ArrayList<Transaction>();
+        dateCreated = new Date(); 
     }
 
-    public Account( int id, double balance, double annualInterestRate ){
+    public Account( int id, double balance, double annualInterestRate, String name ){
         this.id = id;
         this.balance = balance;
         this.annualInterestRate = annualInterestRate;
+        this.name = name;
     }
 
     public void withdraw(double money) {
@@ -164,13 +173,14 @@ class Transaction {
 	private double amount;
 	private double balance;
 	private String description;
-	private Date dateCreated = new Date();
+	private Date dateCreated;
 	
 	public Transaction(char type, double amount, double balance, String description){
 		this.type = type;
 		this.amount = amount;
 		this.balance = balance;
 		this.description = description;
+		dateCreated = new Date(); 
 	}
 
     public void withdraw(double money) {
