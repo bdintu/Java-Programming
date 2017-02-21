@@ -33,10 +33,10 @@ class Account {
         annualInterestRate = 0;
     }
 
-    public Account( int initID, double initBalance, double initAnnualInterestRate ){
-        id = initID;
-        balance = initBalance;
-        annualInterestRate = initAnnualInterestRate;
+    public Account( int id, double balance, double annualInterestRate ){
+        this.id = id;
+        this.balance = balance;
+        this.annualInterestRate = annualInterestRate;
     }
 
     public void withdraw(double money) {
@@ -120,10 +120,10 @@ class Account {
         annualInterestRate = 0;
     }
 
-    public Account( int initID, double initBalance, double initAnnualInterestRate ){
-        id = initID;
-        balance = initBalance;
-        annualInterestRate = initAnnualInterestRate;
+    public Account( int id, double balance, double annualInterestRate ){
+        this.id = id;
+        this.balance = balance;
+        this.annualInterestRate = annualInterestRate;
     }
 
     public void withdraw(double money) {
