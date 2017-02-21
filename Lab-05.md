@@ -11,12 +11,12 @@ public class Main {
         account.withdraw(2500.0);
         account.deposit(3000.0);
         System.out.println(account.toString());
-        
-        /*SavingsAccount saving = new SavingsAccount( 1122, 20000.0, 4.5 );
+
+        SavingsAccount saving = new SavingsAccount( 1122, 20000.0, 4.5 );
         System.out.println(saving.toString());
-        
-        CheckingAccount saving = new CheckingAccount( 1122, 20000.0, 4.5 );
-        System.out.println(saving.toString());*/
+
+        CheckingAccount checking = new CheckingAccount( 1122, 20000.0, 4.5 );
+        System.out.println(saving.toString());
     }
 }
 
@@ -65,17 +65,25 @@ class Account {
     public Date getDateCreated() {
         return  dateCreated;
     }
-    
+
     public String toString(){
-    	return "The balance is " + getBalance() + "\n" + "the monthly interest is " + getMonthlyInterest() + "\n" + "the date when this account was created is "+ getDateCreated() + "\n";
+        return "The balance is " + getBalance() + "\n" + "the monthly interest is " + getMonthlyInterest() + "\n" + "the date when this account was created is "+ getDateCreated() + "\n";
     }
 }
 
 class SavingsAccount extends Account {
+	
+	public SavingsAccount(int initID, double initBalance, double initAnnualInterestRate) {
+		super( initID, initBalance, initAnnualInterestRate);
+	}
 
 }
 
 class CheckingAccount extends Account {
+	
+	public CheckingAccount(int initID, double initBalance, double initAnnualInterestRate) {
+		super( initID, initBalance, initAnnualInterestRate);
+	}
 
 }
 ```
