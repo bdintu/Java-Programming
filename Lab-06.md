@@ -129,4 +129,118 @@ class Triangle extends GeometricObject {
 #Programming Exercise 13.10 p.530 (Enable Rectangle comparable)
 
 ```java
+import java.util.Scanner;
+import java.util.Date;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Rectangle r1 = new Rectangle(3, 5, "pink", true);
+        Rectangle r2 = new Rectangle(5, 3, "blue", false);
+
+        System.out.println("Rectangle1 Area : " + r1.getArea());
+        System.out.println("Rectangle2 Area : " + r2.getArea());
+
+        System.out.println("Rectangle1 is " + (r1.equals(r2) ? "" : "not ") + "equal to Rectangle2");
+    }
+}
+
+abstract class GeometricObject {
+
+    private String color;
+    private boolean filled;
+    private Date dateCreated;
+
+    protected GeometricObject() {
+    }
+
+    protected GeometricObject(String color, boolean filled) {
+        this.color = color;
+        this.filled = filled;
+        dateCreated = new Date();
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public boolean isFilled() {
+        return filled;
+    }
+
+    public void setFilled(boolean filled) {
+        this.filled = filled;
+    }
+
+    public Date getDateCreated() {
+        return dateCreated;
+    }
+
+    public String toString() {
+        return "dateCreated: " + dateCreated + "\ncolor: " + color + "\nfilled: " + filled;
+    }
+
+    public abstract double getArea();
+
+    public abstract double getPerimeter();
+}
+
+class Rectangle extends GeometricObject implements Comparable<Rectangle> {
+
+    private double width;
+    private double height;
+
+    public Rectangle() {
+    }
+
+    public Rectangle(double width, double height, String color, boolean filled) {
+        super(color, filled);
+        this.width = width;
+        this.height = height;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public double getArea() {
+        return width * height;
+    }
+
+    public double getPerimeter() {
+        return 2 * (width * height);
+    }
+
+    public int compareTo(Rectangle obj) {
+        if (this.getArea() == obj.getArea()) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public boolean equals(Rectangle obj) {
+        return this.compareTo(obj) == 1;
+    }
+
+    public String toString() {
+        return super.toString() + "\nWidth: " + width + "\nHeight: " + height + "\nArea: " + getArea() + "\nPerimeter: " + getPerimeter();
+    }
+}
 ```
