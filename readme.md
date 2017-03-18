@@ -3,7 +3,7 @@ Y. Daniel Liang
 
 #KMITL 1D Computer Programming 2
 ## Course Syllabus 2559
-## Computer Programming 2 Lab
+### Computer Programming 2
 
 - Object-oriented programming principles, methods, classes, information hiding, and inheritance;
 - fundamental algorithms, sorting and searching;
