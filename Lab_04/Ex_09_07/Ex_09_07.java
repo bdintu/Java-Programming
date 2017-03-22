@@ -1,7 +1,7 @@
 /*
 Programming Exercise 9.7 p.361 (The Account class)
  */
-package Lab_04;
+package Ex_09_07;
 
 public class Ex_09_07 {
 

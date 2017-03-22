@@ -1,7 +1,4 @@
-/*
-Programming Exercise 9.11 p.363 (Algebra: 2 * 2 linear equations) 
- */
-package Lab_04;
+package Ex_09_11;
 
 public class LinearEquation {
 

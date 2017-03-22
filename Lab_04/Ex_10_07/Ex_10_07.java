@@ -1,7 +1,7 @@
 /*
 Programming Exercise 10.7 p.401 (Game: ATM machine)
  */
-package Lab_04;
+package Ex_10_07;
 
 import java.util.Scanner;
 

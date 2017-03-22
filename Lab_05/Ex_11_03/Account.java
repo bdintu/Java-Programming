@@ -1,8 +1,4 @@
-/*
-Programming Exercise 9.7 p.361 (The Account class)
-
- */
-package Lab_04;
+package Ex_11_03;
 
 import java.util.Date;
 
@@ -42,6 +38,10 @@ public class Account {
         return balance;
     }
 
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
     public double getMonthlyInterestRate() {
         return balance * getMonthlyInterest();
     }
@@ -54,8 +54,7 @@ public class Account {
         return dateCreated;
     }
 
-    @Override
     public String toString() {
-        return "The balance is $" + balance + "\nthe monthly interest is " + getMonthlyInterest() + "%\nThe date when this account was created is " + dateCreated + "\n";
+        return "The balance is $" + balance + "\nthe monthly interest is " + getMonthlyInterest() + "%\nthe date when this account was created is " + dateCreated + "\n";
     }
 }
