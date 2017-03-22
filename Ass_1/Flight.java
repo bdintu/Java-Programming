@@ -1,9 +1,9 @@
-package ars;
+package Ass_1;
 
-import static ars.Main.scanner;
-import static ars.Main.mainMode;
-import static ars.Main.router;
-import static ars.Main.flight;
+import static Ass_1.Main.scanner;
+import static Ass_1.Main.mainMode;
+import static Ass_1.Main.router;
+import static Ass_1.Main.flight;
 
 public class Flight extends Router {
 
@@ -25,7 +25,7 @@ public class Flight extends Router {
         flight.printByRouter();
 
         System.out.println("----------------------------------------");
-        System.out.println("Press key number Flight ID and Enter :");
+        System.out.println("Press select Flight ID and Enter");
         System.out.println("----------------------------------------");
         flight.setFlightID(scanner.next());
 
@@ -36,7 +36,7 @@ public class Flight extends Router {
         if(mainMode==1){
 
             System.out.println("----------------------------------------");
-            System.out.println("Press key number of people :");
+            System.out.println("Press amount of seat");
             System.out.println("----------------------------------------");
             flight.setPeopleAmount(scanner.nextInt());
 
@@ -48,14 +48,14 @@ public class Flight extends Router {
             return 2;
         }
         
-        System.out.println("----------------------------------------");
+        /*System.out.println("----------------------------------------");
         System.out.print("Confirm a reservation file ");
         System.out.println(flight_info[flight.getFlight()].getFlightID());
         System.out.println("Press key 1 to comfirm");
         System.out.println("----------------------------------------");
         if(scanner.nextInt()!=1){
             return 2;
-        }
+        }*/
         
         return 3;
     
@@ -174,7 +174,7 @@ public class Flight extends Router {
 
     public void printFlightAll() {
         System.out.println("----------------------------------------");
-        System.out.println("Flight All");
+        System.out.println("All Flight");
         System.out.println("----------------------------------------");
         for (int i = 0; i < flight_size; i++) {
             System.out.print(i + ") ");

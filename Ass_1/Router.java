@@ -1,7 +1,7 @@
-package ars;
+package Ass_1;
 
-import static ars.Main.scanner;
-import static ars.Main.router;
+import static Ass_1.Main.scanner;
+import static Ass_1.Main.router;
 
 public class Router {
 
@@ -19,7 +19,7 @@ public class Router {
         router.printRouterAll();
 
         System.out.println("----------------------------------------");
-        System.out.println("Press key number 0-11 and Enter :");
+        System.out.println("Press select number of route(0-11) and Enter");
         System.out.println("----------------------------------------");
         router.setRouterID(scanner.nextInt());
 
@@ -61,7 +61,7 @@ public class Router {
 
     public void printRouterAll() {
         System.out.println("----------------------------------------");
-        System.out.println("Router All");
+        System.out.println("All route");
         System.out.println("----------------------------------------");
         for (int i = 0; i < router_size; i++) {
             System.out.println(router_info[i].toString());

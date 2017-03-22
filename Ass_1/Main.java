@@ -1,4 +1,4 @@
-package ars;
+package Ass_1;
 
 import java.util.Scanner;
 
@@ -75,7 +75,7 @@ public class Main {
 
             //Test Class
             ticket.printTicketAll();
-            flight.printFlightAll();
+            //flight.printFlightAll();
         }
     }
 
@@ -109,13 +109,14 @@ public class Main {
             System.out.println("----------------------------------------");
             flight.setFlightID(scanner.next());
             System.out.println("----------------------------------------");
-            System.out.println("you are cancle(key 0) ticket or renew ticket(key 1)? ");
+            System.out.println("press key 1-2 and Enter");
             System.out.println("----------------------------------------");
-            if(scanner.nextInt()==0){
+            System.out.println("1) Cancle a ticket");
+            System.out.println("2) Change a ticket");
+            if(scanner.nextInt()==1){
                 subMode = 0;
             }
             ticket.delTicket();
-            
         }
     }
 }

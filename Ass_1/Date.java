@@ -1,4 +1,4 @@
-package ars;
+package Ass_1;
 
 public class Date {
     public static String getDay(int date) {

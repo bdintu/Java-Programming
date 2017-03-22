@@ -1,5 +1,5 @@
-package ars;
-import static ars.Main.flight;
+package Ass_1;
+import static Ass_1.Main.flight;
 
 public class TicketInfo{
 

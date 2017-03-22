@@ -1,10 +1,10 @@
-package ars;
+package Ass_1;
 import java.util.ArrayList;
 
-import static ars.Main.scanner;
-import static ars.Main.mainMode;
-import static ars.Main.flight;
-import static ars.Main.ticket;
+import static Ass_1.Main.scanner;
+import static Ass_1.Main.mainMode;
+import static Ass_1.Main.flight;
+import static Ass_1.Main.ticket;
 
 public class Ticket {
 
@@ -18,12 +18,12 @@ public class Ticket {
     
     public static int main() {
         System.out.println("----------------------------------------");
-        System.out.println("press Name and Enter");
+        System.out.println("Enter your name");
         System.out.println("----------------------------------------");
         
         if(mainMode==1){
             for (int i = 0; i < flight.getPeopleAmount(); i++) {
-                System.out.println("No. " + i + " of " + flight.getPeopleAmount() + " ");
+                System.out.println("No. " + i+1 + " of " + flight.getPeopleAmount() + " ");
                 ticket.setName(scanner.next());
                 ticket.addTicket();
             }    
@@ -31,7 +31,7 @@ public class Ticket {
             ticket.addTicket();
         }
 
-        System.out.println("Book a Ticket Success");
+        System.out.println("Booking a Ticket Success");
         return 0;
     }
     
@@ -70,7 +70,7 @@ public class Ticket {
                 }
             }
         }
-        System.out.println("Cancle Ticket Success");
+        System.out.println("Cancle a Ticket Success");
     }
     
     public boolean isNotTicket(){
@@ -82,14 +82,16 @@ public class Ticket {
     }
     
     public void printTicket(){
-        int i = getTicketInfoIndex();
-        System.out.println(ticket_info.get(i).toString());
-
+        for (int i = 0; i < ticket_info.size(); i++) {
+            if( ticket_info.get(i).getName().toLowerCase().equals(ticket.getName().toLowerCase() ) ){
+                System.out.println(ticket_info.get(i).toString());
+            }
+        }
     }
     
     public void printTicketAll(){
         System.out.println("----------------------------------------");
-        System.out.println("Ticket All");
+        System.out.println("All Ticket");
         System.out.println("----------------------------------------");
         for (int i = 0; i < ticket_info.size(); i++) {
             System.out.println(ticket_info.get(i).toString());

@@ -1,4 +1,4 @@
-package ars;
+package Ass_1;
 
 class FlightInfo extends RouterInfo{
 
@@ -52,6 +52,6 @@ class FlightInfo extends RouterInfo{
     }
 
     public String toString() {
-        return " Flight ID " + flightID + ", From " + router.from + ", To " + router.to + ", Date " + Date.getDay(day) + " Time " + Date.getHour(timeIn) + " -> " + Date.getHour(timeOut) + ", Availability " + (5-seat) + "seat.";
+        return " Flight ID " + flightID + ", From " + router.from + ", To " + router.to + ", Date " + Date.getDay(day) + " Time " + Date.getHour(timeIn) + " -> " + Date.getHour(timeOut) + ", Available " + (5-seat) + " seat.";
     }
 }

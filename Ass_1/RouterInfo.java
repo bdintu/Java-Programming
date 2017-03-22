@@ -1,4 +1,4 @@
-package ars;
+package Ass_1;
 
 public class RouterInfo {
 
@@ -29,6 +29,6 @@ public class RouterInfo {
     }
     
     public String toString() {
-        return " Router ID : " + routerID + ", From " + from + " to " + to + ".";
+        return " Route ID : " + routerID + ", From " + from + " to " + to + ".";
     }
 }
