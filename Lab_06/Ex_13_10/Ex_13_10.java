@@ -2,7 +2,7 @@
 Programming Exercise 13.10 p.530 (Enable Rectangle comparable)
 */
 
-package Ex_13_10;
+package ex_13_10;
 
 public class Ex_13_10 {
 

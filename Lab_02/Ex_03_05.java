@@ -1,7 +1,7 @@
 /*
 Programming Exercise 3.5 p.131 
  */
-package Lab_02;
+package lab_02;
 
 import java.util.Scanner;
 

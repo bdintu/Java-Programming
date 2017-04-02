@@ -1,7 +1,7 @@
 /*
 Programming Exercise 12.5 p.488 (IllegalTriangleException)
  */
-package Ex_12_05;
+package ex_12_05;
 
 import java.util.Scanner;
 

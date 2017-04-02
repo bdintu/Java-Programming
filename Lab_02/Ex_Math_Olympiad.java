@@ -1,7 +1,7 @@
 /*
 Extra Exercise (Math Olympiad)
  */
-package Lab_02;
+package lab_02;
 
 public class Ex_Math_Olympiad {
 

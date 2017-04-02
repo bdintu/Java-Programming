@@ -1,7 +1,7 @@
 /*
 Programming Exercise 7.31 p.283 (Merge two sorted lists) 
  */
-package Lab_03;
+package lab_03;
 
 import java.util.Scanner;
 

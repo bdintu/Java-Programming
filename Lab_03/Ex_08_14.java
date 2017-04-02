@@ -1,7 +1,7 @@
 /*
 Programming Exercise 8.14 p.310 (Explore matrix)
  */
-package Lab_03;
+package lab_03;
 
 import java.util.Scanner;
 

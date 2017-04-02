@@ -2,7 +2,7 @@
 Programming Exercise 12.31 p.492 (Baby name popularity ranking)
 */
 
-package Ex_12_03;
+package ex_12_03;
 
 
 import java.util.Scanner;

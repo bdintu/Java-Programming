@@ -1,7 +1,7 @@
 /*
 Programming Exercise 9.11 p.363 (Algebra: 2 * 2 linear equations) 
  */
-package Ex_09_11;
+package ex_09_11;
 
 import java.util.Scanner;
 

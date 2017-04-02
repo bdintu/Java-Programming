@@ -1,4 +1,4 @@
-package Ex_09_11;
+package ex_09_11;
 
 public class LinearEquation {
 

@@ -1,4 +1,4 @@
-package Ex_12_05;
+package ex_12_05;
 
 public class Triangle extends GeometricObject {
 

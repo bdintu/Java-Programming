@@ -1,7 +1,7 @@
 /*
 Programming Exercise 11.3 p.445 (Subclasses of Account)
  */
-package Ex_11_03;
+package ex_11_03;
 
 public class Ex_11_03 {
 

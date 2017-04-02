@@ -1,7 +1,7 @@
 /*
 Programming Exercise 11.8 p.446 (New Account class)
  */
-package Ex_11_08;
+package ex_11_08;
 
 public class Ex_11_08 {
 

@@ -1,7 +1,7 @@
 /*
 Programming Exercise 13.1 p.529 (Triangle class)
  */
-package Ex_13_01;
+package ex_13_01;
 
 import java.util.Scanner;
 

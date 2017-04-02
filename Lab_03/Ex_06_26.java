@@ -1,7 +1,7 @@
 /*
 Programming Exercise 6.26 p.262 (Palindromic prime)
  */
-package Lab_03;
+package lab_03;
 
 class Ex_06_26 {
 

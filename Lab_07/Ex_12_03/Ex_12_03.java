@@ -1,7 +1,7 @@
 /*
 Programming Exercise 12.3 p.488 (ArrayIndexOutOfBoundsException)
  */
-package Ex_12_03;
+package ex_12_03;
 
 import java.util.Scanner;
 

@@ -1,7 +1,7 @@
 /*
 Programming Exercise 11.2 p.445
  */
-package Ex_11_02;
+package ex_11_02;
 
 public class Ex_11_02 {
 

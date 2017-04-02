@@ -1,4 +1,4 @@
-package Ex_12_03;
+package ex_12_03;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package Ex_13_10;
+package ex_13_10;
 
 public class Rectangle extends GeometricObject implements Comparable<Rectangle> {
 
